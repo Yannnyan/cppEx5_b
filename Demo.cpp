@@ -32,14 +32,18 @@ int main() {
   */
 
   for (auto it=tree_of_ints.begin_preorder(); it!=tree_of_ints.end_preorder(); ++it) {
-    cout << (*it) << " " << endl;
+    cout << (*it) << " " ;
   }  // prints: 1 2 4 5 3
   for (auto it=tree_of_ints.begin_inorder(); it!=tree_of_ints.end_inorder(); ++it) {
-    cout << (*it) << " " << endl;
+    cout << (*it) << " " ;
   }  // prints: 4 2 5 1 3 
   for (auto it=tree_of_ints.begin_postorder(); it!=tree_of_ints.end_postorder(); ++it) {
-    cout << (*it) << " " << endl;
+    cout << (*it) << " " ;
   }  // prints: 4 5 2 3 1
+
+  for (int element: tree_of_ints) {  // this should work like inorder
+    cout << element << " " ;
+  }  // prints: 4 2 5 1 3 
 
 
   // The same should work with other types, e.g. with strings:
@@ -54,14 +58,17 @@ int main() {
   cout << tree_of_strings << endl; 
 
   for (auto it=tree_of_strings.begin_preorder(); it!=tree_of_strings.end_preorder(); ++it) {
-    cout << (*it) << " " << endl;
+    cout << (*it) << " " ;
   }  // prints: 1 2 4 5 3
   for (auto it=tree_of_strings.begin_inorder(); it!=tree_of_strings.end_inorder(); ++it) {
-    cout << (*it) << " " << endl;
+    cout << (*it) << " " ;
   }  // prints: 4 2 5 1 3 
   for (auto it=tree_of_strings.begin_postorder(); it!=tree_of_strings.end_postorder(); ++it) {
-    cout << (*it) << " " << endl;
+    cout << (*it) << " " ;
   }  // prints: 4 5 2 3 1
 
+  for (const string& element: tree_of_strings) {  // this should work like inorder
+    cout << element << " " ;
+  }   // prints: 4 2 5 1 3 
   
 }
