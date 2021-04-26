@@ -3,8 +3,8 @@
 CXX=clang++-9
 CXXVERSION=c++2a
 CXXFLAGS=-std=$(CXXVERSION) -Werror -Wsign-conversion
-VALGRIND_FLAGS=-v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 TIDY_FLAGS=-extra-arg=-std=$(CXXVERSION) -checks=bugprone-*,clang-analyzer-*,cppcoreguidelines-*,performance-*,portability-*,readability-*,-cppcoreguidelines-pro-bounds-pointer-arithmetic,-cppcoreguidelines-owning-memory --warnings-as-errors=-*
+VALGRIND_FLAGS=-v --leak-check=full --show-leak-kinds=all  --error-exitcode=99
 
 SOURCES=Tree.hpp
 OBJECTS=
