@@ -19,7 +19,7 @@ test: TestCounter.o Test.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o test
 
 tidy:
-	clang-tidy $(SOURCES) $(TIDY_FLAGS) --warnings-as-errors=-* --
+	clang-tidy $(SOURCES) $(TIDY_FLAGS) --
 
 valgrind: demo test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./demo 2>&1 | { egrep "lost| at " || true; }
