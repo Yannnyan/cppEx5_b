@@ -14,7 +14,7 @@ preorder, inorder, postorder.
 * `add_right` - כנ"ל, רק שהתוספת היא בתור הילד הימני.
 * `begin_preorder()`, `end_preorder()` - מחזירות איטרטורים לצורך מעבר בסדר preorder (אב - שמאל - ימין).
 * `begin_inorder()`, `end_inorder()` - מחזירות איטרטורים לצורך מעבר בסדר inorder (שמאל - אב - ימין).
-* `begin_postorder()`, `end_postorder()` - מחזירות איטרטורים לצורך מעבר בסדר inorder (שמאל - ימין - אב).
+* `begin_postorder()`, `end_postorder()` - מחזירות איטרטורים לצורך מעבר בסדר postorder (שמאל - ימין - אב).
 * אופרטור פלט - מדפיס את העץ בפורמט הגיוני כלשהו לבחירתכם.
 
 
