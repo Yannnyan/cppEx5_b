@@ -67,6 +67,12 @@ int main() {
     cout << (*it) << " " ;
   }  // prints: 4 5 2 3 1
 
+  // demonstrate the arrow operator:
+  for (auto it=tree_of_strings.begin_postorder(); it!=tree_of_strings.end_postorder(); ++it) {
+    cout << it->size() << " " ;
+  }  // prints: 1 1 1 1 1 
+
+
   for (const string& element: tree_of_strings) {  // this should work like inorder
     cout << element << " " ;
   }   // prints: 4 2 5 1 3 
