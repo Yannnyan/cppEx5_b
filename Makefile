@@ -22,7 +22,7 @@ test: TestCounter.o Test.o $(OBJECTS)
 	$(CXX) $(CXXFLAGS) $^ -o $@
 
 tidy:
-	clang-tidy $(SOURCES) $(TIDY_FLAGS) --
+	clang-tidy $(HEADERS) $(TIDY_FLAGS) --
 
 valgrind: demo test
 	valgrind --tool=memcheck $(VALGRIND_FLAGS) ./demo 2>&1 | { egrep "lost| at " || true; }
