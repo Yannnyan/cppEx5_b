@@ -18,9 +18,9 @@ TEST_CASE("add_root")
 {
     OrgChart c;
     c.add_root("carrot");
-    CHECK((*c.begin()).compare("carrot"));
+    CHECK((*c.begin())==("carrot"));
     c.add_root("artishock");
-    CHECK((*c.begin()).compare("artishock"));
+    CHECK((*c.begin())==("artishock"));
 }
 TEST_CASE("add_sub")
 {
@@ -34,7 +34,7 @@ TEST_CASE("add_sub")
     
     auto it = c.begin_level_order();
     // first level
-    CHECK((*it).compare("tea"));
+    CHECK((*it)==("tea"));
     // increment
     it++;
     // store variables and counter
@@ -46,7 +46,7 @@ TEST_CASE("add_sub")
     // second level
     for(int i=0; i<3; i++)
     {
-        if((*it).compare("ginger"))
+        if((*it)==("ginger"))
         {
             if(sec_level.at(0) == true)
             {
@@ -57,7 +57,7 @@ TEST_CASE("add_sub")
                 sec_level.at(0) = true;
             }
         }
-        else if((*it).compare("lemon"))
+        else if((*it)==("lemon"))
         {
             if(sec_level.at(1) == true)
             {
@@ -68,7 +68,7 @@ TEST_CASE("add_sub")
                 sec_level.at(1) = true;
             }
         }
-        else if((*it).compare("sugar"))
+        else if((*it)==("sugar"))
         {
             if(sec_level.at(2) == true)
             {
@@ -92,7 +92,7 @@ TEST_CASE("add_sub")
     bool cane = false;
     for(int i=0; i<2; i++)
     {
-        if((*it).compare("seed"))
+        if((*it)==("seed"))
         {
             if (seed == true)
             {
@@ -103,7 +103,7 @@ TEST_CASE("add_sub")
                 seed = true;
             }
         }
-        else if ((*it).compare("cane"))
+        else if ((*it)==("cane"))
         {
             if (cane == true)
             {
@@ -149,7 +149,7 @@ TEST_CASE("Reverse_order")
     }
     result.pop_back();
     string compare = "sub_sub_root1 sub_sub_root sub_root2 sub_root1 sub_root root";
-    CHECK(result.compare(compare));
+    CHECK(result == (compare));
 }
 // check that the pre order visit traversal is visiting the father before it is visiting it's children
 TEST_CASE("Pre_order")
@@ -178,7 +178,7 @@ TEST_CASE("Pre_order")
     result.pop_back();
     // doing one compare case because there are too many to write
     string compare = "root sub_root sub_sub_root sub_root1 sub_sub_root1 sub_root2";
-    CHECK(result.compare(compare));
+    CHECK(result == (compare));
 
 }
 TEST_CASE("Level_order")
@@ -206,7 +206,7 @@ TEST_CASE("Level_order")
     }
     result.pop_back();
     string compare = "root sub_root sub_root1 sub_root2 sub_sub_root sub_sub_root1";
-    CHECK(result.compare(compare));
+    CHECK(result == (compare));
 }
 
 TEST_CASE("Operator <<")
@@ -230,7 +230,7 @@ TEST_CASE("Operator <<")
     stream << c;
     string result = stream.str();
     string compare = "root sub_root sub_root1 sub_root2 sub_sub_root sub_sub_root1";
-    CHECK(result.compare(compare));
+    CHECK(result == (compare));
 }
 // not throwing here
 TEST_CASE("Good_input")
